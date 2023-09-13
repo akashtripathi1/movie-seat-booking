@@ -101,3 +101,11 @@ body {
 .row {
     display: flex;
 }
+
+p.text {
+    margin: 5px 0;
+}
+
+p.text span{
+    color: #6feaf6;
+}
