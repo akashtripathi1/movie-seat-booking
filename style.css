@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans&display=swap');
 
 * {
     box-sizing : border-box;
@@ -14,5 +14,17 @@ body {
     height: 100vh;
     font-family: 'Lato', sans-serif;
     margin: 0;
-    
+}
+
+.movie-container {
+    margin: 20px 0;
+}
+
+.movie-container select {
+    border: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
 }
