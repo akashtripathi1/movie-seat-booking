@@ -4,7 +4,7 @@ const count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
 
-const ticketPrice = +movieSelect.value;   // Added + sign to convert the type from string to number 
+let ticketPrice = +movieSelect.value;   // Added + sign to convert the type from string to number 
 
 // update total and count
 function updateSelectedCount(){
