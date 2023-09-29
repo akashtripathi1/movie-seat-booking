@@ -6,13 +6,23 @@ const movieSelect = document.getElementById('movie');
 
 let ticketPrice = +movieSelect.value;   // Added + sign to convert the type from string to number 
 
+// local storage function for movie and movie price
+
+function setMovieData (movieIndex, moviePrice) {
+    localStorage.setItem('selectedMovieIndex', movieIndex);
+    localStorage.setItem('selectMoviePrice', moviePrice);
+
+}
+
 // update total and count
 function updateSelectedCount(){
     const selectedSeats = document.querySelectorAll('.row .seat.selected');
 
 
     const seatIndex = [...selectedSeats].map( (seat) => [...seats].indexOf(seat));
-    console.log(seatIndex);
+    // console.log(seatIndex);
+    localStorage.setItem('selectedSeats', JSON.stringify(seatIndex));
+
     const selectedSeatsCount = selectedSeats.length;
 
     count.innerText = selectedSeatsCount;
@@ -37,6 +47,8 @@ container.addEventListener('click', (e) => {
 movieSelect.addEventListener('change', (e) => {
     // console.log(movieSelect.value);
     ticketPrice = movieSelect.value;
+    // console.log(e.target.selectedIndex, e.target.value);
+    setMovieData(e.target.selectedIndex, e.target.value);
 
     updateSelectedCount();
 });
