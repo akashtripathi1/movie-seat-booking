@@ -4,5 +4,9 @@ const count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
 
-const ticketPrice = +movieSelect.value;
-console.log(ticketPrice);
+const ticketPrice = +movieSelect.value;   // Added + sign to convert the type from string to number 
+
+container.addEventListener('click', (e) => {
+    console.log(e.target);
+});
+
