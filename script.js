@@ -6,11 +6,15 @@ const movieSelect = document.getElementById('movie');
 
 const ticketPrice = +movieSelect.value;   // Added + sign to convert the type from string to number 
 
+// update total and count
 function updateSelectedCount(){
     const selectedSeats = document.querySelectorAll('.row .seat.selected');
     const selectedSeatsCount = selectedSeats.length;
 
-    console.log(selectedSeatsCount);
+    count.innerText = selectedSeatsCount;
+    total.innerText = selectedSeatsCount * ticketPrice;
+
+    // console.log(selectedSeatsCount);
 }
 
 container.addEventListener('click', (e) => {
