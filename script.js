@@ -17,6 +17,8 @@ function updateSelectedCount(){
     // console.log(selectedSeatsCount);
 }
 
+// seat click event
+
 container.addEventListener('click', (e) => {
     if(e.target.classList.contains('seat') &&
      !e.target.classList.contains('occupied'))
@@ -26,3 +28,9 @@ container.addEventListener('click', (e) => {
      }
 });
 
+// Movie select event listener
+
+movieSelect.addEventListener('change', (e) => {
+    // console.log(movieSelect.value);
+    ticketPrice = movieSelect.value;
+});
