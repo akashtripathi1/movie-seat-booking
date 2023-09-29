@@ -33,4 +33,6 @@ container.addEventListener('click', (e) => {
 movieSelect.addEventListener('change', (e) => {
     // console.log(movieSelect.value);
     ticketPrice = movieSelect.value;
+
+    updateSelectedCount();
 });
