@@ -6,6 +6,9 @@ const movieSelect = document.getElementById('movie');
 
 let ticketPrice = +movieSelect.value;   // Added + sign to convert the type from string to number 
 
+// populateUI function call
+populateUI();
+
 // local storage function for movie and movie price
 
 function setMovieData (movieIndex, moviePrice) {
@@ -41,7 +44,21 @@ container.addEventListener('click', (e) => {
         updateSelectedCount();
      }
 });
+//Get data from local storage and populate UI
 
+function populateUI() {
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+    // console.log(selectedSeats);
+
+    if(selectedSeats !== null && selectedSeats.length > 0){
+        seats.forEach((seat,index) => {
+            if(selectedSeats.indexOf(index) > -1){
+                seat.classList.add('selected');
+            }
+        });
+    }
+
+}
 // Movie select event listener
 
 movieSelect.addEventListener('change', (e) => {
